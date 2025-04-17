@@ -1,4 +1,4 @@
-'''
+```
 multi_cam_calib/
 ├── calibrate_single.py       # Calibrate individual cameras
 ├── calibrate_stereo.py       # Calibrate camera pairs (stereo)
@@ -6,4 +6,4 @@ multi_cam_calib/
 ├── utils.py                  # Helper functions
 ├── chessboard_config.json    # Calibration pattern config
 └── data/                     # The images organized by camera
-'''
+```
