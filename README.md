@@ -30,3 +30,26 @@ Multi-Sensor-Fusion/
 ├── requirements.txt               # Dependencies
 └── .gitignore
 ```
+
+Camera calibration finds the intrinsic parameters of your camera, like:
+- fx, fy: focal length (in pixels)
+- cx, cy: principal point (optical center)
+- k1, k2, ...: lens distortion coefficients
+
+These parameters describe how your camera "sees" the world and are essential for:
+- 3D reconstruction
+- Multi-camera fusion
+- Removing lens distortion
+- Projecting 3D points onto 2D images accurately
+
+# Run 
+## Step 1
+```
+  --images /Your-file-path/MultiSensor-Fusion-main/data/cam1 \
+  --out intrinsics_cam1.json \
+  --board 9x6
+```
+If it shows the message below then means the intrinsic parameters were saved successfully
+```
+[INFO] Calibration saved to intrinsics_cam1.json
+```
