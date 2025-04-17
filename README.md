@@ -1,9 +1,31 @@
+# Multi-Sensor-Fusion
+
+This repo performs stereo calibration for a two-camera setup using OpenCV. It computes intrinsic and extrinsic parameters to align both cameras into a shared coordinate frame.
+
+## Setup
+
+```bash
+pip install -r requirements.txt
+
 ```
-multi_cam_calib/
-├── calibrate_single.py       # Calibrate individual cameras
-├── calibrate_stereo.py       # Calibrate camera pairs (stereo)
-├── calibrate_multicam.py     # Align all cameras to a shared frame
-├── utils.py                  # Helper functions
-├── chessboard_config.json    # Calibration pattern config
-└── data/                     # The images organised by camera
+Multi-Sensor-Fusion/
+├── camera_calibration/
+│   ├── calibrate_single.py        # Calibrate each camera separately
+│   ├── calibrate_stereo.py        # Compute extrinsics between two cameras
+│   ├── stereo_config.json         # Stores stereo calibration results
+│   ├── intrinsics_cam0.json
+│   ├── intrinsics_cam1.json
+│   └── utils.py                   # Helper functions
+│
+├── data/
+│   ├── cam0/                      # Calibration images from camera 0
+│   │   ├── img_001.jpg
+│   │   └── ...
+│   └── cam1/                      # Calibration images from camera 1
+│       ├── img_001.jpg
+│       └── ...
+│
+├── README.md                      # Setup + usage instructions
+├── requirements.txt               # Dependencies
+└── .gitignore
 ```
