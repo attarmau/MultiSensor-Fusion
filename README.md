@@ -10,7 +10,7 @@ pip install -r requirements.txt
 ## Folder Structure
 ```
 Multi-Sensor-Fusion/
-├── camera_calibration/
+├── multi_cam_calib/
 │   ├── calibrate_single.py        # Calibrate each camera separately
 │   ├── intrinsics_cam0.json
 │   ├── intrinsics_cam1.json
