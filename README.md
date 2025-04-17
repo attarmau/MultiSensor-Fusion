@@ -6,7 +6,7 @@ This repo performs stereo calibration for a two-camera setup using OpenCV. It co
 
 ```bash
 pip install -r requirements.txt
-
+```
 ```
 Multi-Sensor-Fusion/
 ├── camera_calibration/
