@@ -12,10 +12,10 @@ pip install -r requirements.txt
 Multi-Sensor-Fusion/
 ├── camera_calibration/
 │   ├── calibrate_single.py        # Calibrate each camera separately
-│   ├── calibrate_stereo.py        # Compute extrinsics between two cameras
-│   ├── stereo_config.json         # Stores stereo calibration results
 │   ├── intrinsics_cam0.json
 │   ├── intrinsics_cam1.json
+│   ├── calibrate_stereo.py        # Compute extrinsics between two cameras
+│   ├── extrinsics_cam1_cam2.json         # Stores stereo calibration results
 │   └── utils.py                   # Helper functions
 │
 ├── data/
