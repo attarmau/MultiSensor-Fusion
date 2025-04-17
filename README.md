@@ -43,7 +43,7 @@ These parameters describe how your camera "sees" the world and are essential for
 - Projecting 3D points onto 2D images accurately
 
 # Run 
-## Step 1
+## Step 1: Get the intrinsic parameters
 ```
   --images /Your-file-path/MultiSensor-Fusion-main/data/cam1 \
   --out intrinsics_cam1.json \
@@ -52,4 +52,12 @@ These parameters describe how your camera "sees" the world and are essential for
 If it shows the message below then means the intrinsic parameters were saved successfully
 ```
 [INFO] Calibration saved to intrinsics_cam1.json
+```
+## Step 2: Get the extrinsic parameters
+```
+python calibrate_stereo.py
+```
+If it shows the message below then means the extrinsic parameters were saved successfully
+```
+[INFO] Stereo calibration complete. Extrinsics saved to 'extrinsics_cam1_cam2.json'.
 ```
