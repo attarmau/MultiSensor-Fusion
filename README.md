@@ -15,7 +15,7 @@ Multi-Sensor-Fusion/
 │   ├── intrinsics_cam0.json
 │   ├── intrinsics_cam1.json
 │   ├── calibrate_stereo.py        # Compute extrinsics between two cameras
-│   ├── extrinsics_cam1_cam2.json         # Stores stereo calibration results
+│   ├── extrinsics_cam1_cam2.json  # Stores stereo calibration results
 │   └── utils.py                   # Helper functions
 │
 ├── data/
