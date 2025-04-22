@@ -16,6 +16,32 @@ pip install -r requirements.txt
 Multi-Sensor-Fusion/
 ├── multi_cam_calib/
 │   ├── calibrate_single.py        # Calibrate each camera separately
+│   ├── calibrate_extrinsics_pnp.py# 外參估算（使用 PnP）
+│   ├── utils.py
+│
+├── data/
+│   ├── intrinsics/                # 各相機的內參 JSON
+│   │   ├── intrinsics_cam0.json
+│   │   ├── intrinsics_cam1.json
+│   │   └── ...
+│   ├── extrinsic/                 # 每組對應棋盤圖像，給外參用
+│   │   ├── set01/
+│   │   │   ├── cam0.jpg
+│   │   │   ├── cam1.jpg
+│   │   │   └── ...
+│   │   ├── set02/
+│   │   │   ├── cam0.jpg
+│   │   │   ├── cam1.jpg
+│   │   │   └── ...
+│   └── output/
+│       └── extrinsics_multi_cam.json
+│
+├── README.md
+└── requirements.txt
+
+Multi-Sensor-Fusion/
+├── multi_cam_calib/
+│   ├── calibrate_single.py        # Calibrate each camera separately
 │   ├── intrinsics_cam0.json
 │   ├── intrinsics_cam1.json
 │   ├── calibrate_stereo.py        # Compute extrinsics between two cameras
@@ -23,7 +49,7 @@ Multi-Sensor-Fusion/
 │   └── utils.py                   # Helper functions
 │
 ├── data/
-│   ├── cam0/                      # Calibration images from camera 0
+│   ├── set1/                      # Calibration images from camera 0
 │   │   ├── img_001.jpg
 │   │   └── ...
 │   └── cam1/                      # Calibration images from camera 1
