@@ -38,27 +38,6 @@ Multi-Sensor-Fusion/
 │
 ├── README.md
 └── requirements.txt
-
-Multi-Sensor-Fusion/
-├── multi_cam_calib/
-│   ├── calibrate_single.py        # Calibrate each camera separately
-│   ├── intrinsics_cam0.json
-│   ├── intrinsics_cam1.json
-│   ├── calibrate_stereo.py        # Compute extrinsics between two cameras
-│   ├── extrinsics_cam1_cam2.json  # Stores stereo calibration results
-│   └── utils.py                   # Helper functions
-│
-├── data/
-│   ├── set1/                      # Calibration images from camera 0
-│   │   ├── img_001.jpg
-│   │   └── ...
-│   └── cam1/                      # Calibration images from camera 1
-│       ├── img_001.jpg
-│       └── ...
-│
-├── README.md                      # Setup + usage instructions
-├── requirements.txt               # Dependencies
-└── .gitignore
 ```
 
 Camera calibration finds the intrinsic parameters of your camera, like:
