@@ -65,7 +65,7 @@ If it shows the message below then means the extrinsic parameters were saved suc
 ```
 [INFO] Stereo calibration complete. Extrinsics saved to 'extrinsics_cam1_cam2.json'.
 ```
-Note: My scenario: Extrinsic Calibration for Fixed Multi-Camera Setup with Non-Movable Lenses
+Note: My scenario is 'Extrinsic Calibration for Fixed Multi-Camera Setup with Non-Movable Lenses'
 
 In this setup, multiple cameras are fixed in different corners, and their lenses do not move. The goal is to estimate the relative positions and orientations (extrinsics) between cameras using images of a shared 3D calibration object (e.g., a chessboard). The script uses the Perspective-n-Point (PnP) method, based on known intrinsic parameters and the object’s geometry.
 
