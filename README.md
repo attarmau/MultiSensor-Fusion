@@ -1,5 +1,4 @@
 # Multi-Sensor-Fusion
-## Non-rigid multi-camera pose estimation
 
 This repo performs stereo calibration for a two-camera setup using OpenCV. It computes intrinsic and extrinsic parameters to align both cameras into a shared coordinate frame.
 
@@ -66,3 +65,8 @@ If it shows the message below then means the extrinsic parameters were saved suc
 ```
 [INFO] Stereo calibration complete. Extrinsics saved to 'extrinsics_cam1_cam2.json'.
 ```
+⚠️ My scenario: Extrinsic Calibration for Fixed Multi-Camera Setup with Non-Movable Lenses
+
+In this setup, multiple cameras are fixed in different corners, and their lenses do not move. The goal is to estimate the relative positions and orientations (extrinsics) between cameras using images of a shared 3D calibration object (e.g., a chessboard). The script uses the Perspective-n-Point (PnP) method, based on known intrinsic parameters and the object’s geometry.
+
+⚠️ If your cameras can move or are repositioned together (e.g., in a stereo rig), you will need to modify the Step 2 script to fit your setup accordingly.
