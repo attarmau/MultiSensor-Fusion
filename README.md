@@ -1,5 +1,5 @@
 # Multi-Sensor-Fusion
-## non-rigid multi-camera pose estimation
+## Non-rigid multi-camera pose estimation
 
 This repo performs stereo calibration for a two-camera setup using OpenCV. It computes intrinsic and extrinsic parameters to align both cameras into a shared coordinate frame.
 
