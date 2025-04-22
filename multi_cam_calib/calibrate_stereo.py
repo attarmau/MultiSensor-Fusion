@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
-import glob
 import json
+import glob
 import os
 
 def load_intrinsics(filename):
@@ -26,9 +26,9 @@ def find_chessboard_corners(image_path, board_size):
             (cv2.TermCriteria_EPS + cv2.TermCriteria_MAX_ITER, 30, 0.001))
     return ret, corners, gray.shape[::-1]
 
-def stereo_calibrate(cam1_images, cam2_images, board_size, square_size, cam1_intrinsics, cam2_intrinsics):
+def calibrate_extrinsics_pnp(cam1_images, cam2_images, board_size, square_size, cam1_intrinsics, cam2_intrinsics):
     """
-    Perform stereo calibration to compute rotation and translation between the two cameras.
+    Perform extrinsics calibration using PnP (Perspective-n-Point) method.
     """
     objp = np.zeros((board_size[0]*board_size[1], 3), np.float32)
     objp[:, :2] = np.mgrid[0:board_size[0], 0:board_size[1]].T.reshape(-1, 2)
@@ -51,19 +51,31 @@ def stereo_calibrate(cam1_images, cam2_images, board_size, square_size, cam1_int
         else:
             print(f"[WARN] Chessboard not found in {cam1_img} or {cam2_img}")
 
-    ret, camera_matrix1, dist_coeffs1, camera_matrix2, dist_coeffs2, R, T, E, F = cv2.stereoCalibrate(
-        objpoints, imgpoints_cam1, imgpoints_cam2, cam1_intrinsics[0], cam1_intrinsics[1],
-        cam2_intrinsics[0], cam2_intrinsics[1], image_size, flags=cv2.CALIB_FIX_INTRINSIC)
+    # Estimate extrinsics using PnP
+    R_list = []
+    T_list = []
 
-    return R, T, E, F
+    for objp_single, imgpoints_single_cam1, imgpoints_single_cam2 in zip(objpoints, imgpoints_cam1, imgpoints_cam2):
+        # Estimate pose for cam1
+        ret1, rvec1, tvec1 = cv2.solvePnP(objp_single, imgpoints_single_cam1, cam1_intrinsics[0], cam1_intrinsics[1])
+        # Estimate pose for cam2
+        ret2, rvec2, tvec2 = cv2.solvePnP(objp_single, imgpoints_single_cam2, cam2_intrinsics[0], cam2_intrinsics[1])
 
-def save_extrinsics(filename, R, T):
+        if ret1 and ret2:
+            R_list.append(rvec1)
+            T_list.append(tvec1)
+            R_list.append(rvec2)
+            T_list.append(tvec2)
+
+    return R_list, T_list
+
+def save_extrinsics(filename, R_list, T_list):
     """
     Save the extrinsic parameters (rotation and translation) to a JSON file.
     """
     data = {
-        'rotation': R.tolist(),
-        'translation': T.tolist()
+        'rotation': [rvec.tolist() for rvec in R_list],
+        'translation': [tvec.tolist() for tvec in T_list]
     }
     with open(filename, 'w') as f:
         json.dump(data, f, indent=2)
@@ -83,10 +95,9 @@ if __name__ == '__main__':
     cam1_images = sorted(glob.glob(os.path.join(cam1_folder, '*.jpg')))
     cam2_images = sorted(glob.glob(os.path.join(cam2_folder, '*.jpg')))
 
-    # Perform stereo calibration and get rotation and translation
-    R, T, E, F = stereo_calibrate(cam1_images, cam2_images, board_size, square_size, cam1_intrinsics, cam2_intrinsics)
+    # Perform extrinsics calibration using PnP
+    R_list, T_list = calibrate_extrinsics_pnp(cam1_images, cam2_images, board_size, square_size, cam1_intrinsics, cam2_intrinsics)
 
     # Save the extrinsic parameters (rotation and translation)
-    save_extrinsics('extrinsics_cam1_cam2.json', R, T)
-    print("[INFO] Stereo calibration complete. Extrinsics saved to 'extrinsics_cam1_cam2.json'.")
-
+    save_extrinsics('extrinsics_pnp.json', R_list, T_list)
+    print("[INFO] Extrinsics calibration complete. Parameters saved to 'extrinsics_pnp.json'.")
