@@ -54,7 +54,7 @@ These parameters describe how your camera "sees" the world and are essential for
 # Run 
 ## Step 1: Get the intrinsic parameters
 ```
-  --images /Your-file-path/MultiSensor-Fusion-main/data/cam1 \
+  calibrate_single.py--images /Your-file-path/MultiSensor-Fusion-main/data/cam1 \
   --out intrinsics_cam1.json \
   --board 9x6
 ```
