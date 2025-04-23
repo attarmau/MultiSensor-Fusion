@@ -5,7 +5,6 @@ This repo performs stereo calibration for a two-camera setup using OpenCV. It co
 ![2025-04-20 10 42 48](https://github.com/user-attachments/assets/c46f2234-b7b9-40a4-916c-1feef68c3a92)
 
 
-
 ## Setup
 
 ```bash
@@ -21,6 +20,14 @@ Multi-Sensor-Fusion/
 │
 ├── data/
 │   ├── intrinsics/                  # Intrinsic parameters for each camera in JSON format
+│   │   ├── cam1/
+│   │   │   ├── img_001.jpg
+│   │   │   ├── img_002.jpg
+│   │   │   └── ...
+│   │   ├── cam2/
+│   │   │   ├── img_001.jpg
+│   │   │   ├── img_002.jpg
+│   │   │   └── ...
 │   │   ├── intrinsics_cam0.json
 │   │   ├── intrinsics_cam1.json
 │   │   └── ...
