@@ -70,6 +70,8 @@ If it shows the message below then means the intrinsic parameters were saved suc
 ```
 [INFO] Calibration saved to intrinsics_cam1.json
 ```
+More theory based intro of intrinsic can refer to: https://ksimek.github.io/2013/08/13/intrinsic/
+
 ## Step 2: Get the extrinsic parameters
 ```
 python calibrate_stereo.py
