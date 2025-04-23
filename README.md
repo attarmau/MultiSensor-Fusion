@@ -26,12 +26,12 @@ Multi-Sensor-Fusion/
 │   │   └── ...
 │   ├── extrinsic/                   # Image sets for extrinsic calibration
 │   │   ├── set01/
-│   │   │   ├── cam0.jpg
 │   │   │   ├── cam1.jpg
+│   │   │   ├── cam2.jpg
 │   │   │   └── ...
 │   │   ├── set02/
-│   │   │   ├── cam0.jpg
 │   │   │   ├── cam1.jpg
+│   │   │   ├── cam2.jpg
 │   │   │   └── ...
 │   └── output/
 │       └── extrinsics_multi_cam.json
