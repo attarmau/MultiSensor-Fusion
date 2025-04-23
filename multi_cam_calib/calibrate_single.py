@@ -10,8 +10,7 @@ def find_chessboard_corners(image_path, board_size):
     gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     ret, corners = cv2.findChessboardCorners(gray, board_size, None)
     if ret:
-        corners = cv2.cornerSubPix(gray, corners, (11,11), (-1,-1),
-            (cv2.TermCriteria_EPS + cv2.TermCriteria_MAX_ITER, 30, 0.001))
+        corners = cv2.cornerSubPix(gray, corners, (11,11), (-1,-1), (cv2.TermCriteria_EPS + cv2.TermCriteria_MAX_ITER, 30, 0.001))
     return ret, corners, gray.shape[::-1]
 
 def calibrate_camera(image_folder, board_size, square_size):
