@@ -24,7 +24,7 @@ Once upgraded, YOLOv11 models are available and you use them like this:
 yolo task=detect mode=train model=yolov11n.pt data=path/to/custom.yaml epochs=100 imgsz=640
 ```
 
-## Model Training 
+## Model Training - Food Detection 
 
 <img width="976" alt="Screenshot 2025-05-23 at 10 16 53 AM" src="https://github.com/user-attachments/assets/9580fa2f-6e0c-4616-a8f3-bcc194c3fb74" />
 
