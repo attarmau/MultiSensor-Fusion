@@ -78,4 +78,9 @@ val: images/val
 names:
   0: food
 ```
-This setup simplifies the training task to binary food detection — perfect for scenarios like detecting whether someone is eating
+This setup simplifies the training task to binary food detection, suitable for scenarios like detecting whether someone is eating
+```
+yolo task=detect mode=train model=yolo11n.pt data=/Users/judyhuang/Downloads/yolo11-eating/datasets/custom.yaml epochs=1 imgsz=640
+```
+## Model Training - Eating Detection
+<img width="1105" alt="Screenshot 2025-05-23 at 7 17 20 PM" src="https://github.com/user-attachments/assets/15d67a1c-8838-4455-b6f6-fdfca31b5e23" />
