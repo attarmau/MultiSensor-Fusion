@@ -1,3 +1,4 @@
+Dataset (Open Source): UEC FOOD 256 - http://foodcam.mobi/dataset256.html 
 ```
 yolo11-food-detection/
 ├── datasets/
