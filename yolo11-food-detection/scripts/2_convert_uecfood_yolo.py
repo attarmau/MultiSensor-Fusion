@@ -7,17 +7,14 @@ OUTPUT_IMAGES_DIR = "/Users/judyhuang/Downloads/yolo11-eating/datasets/yolo_data
 OUTPUT_LABELS_DIR = "/Users/judyhuang/Downloads/yolo11-eating/datasets/yolo_dataset/labels"
 CLASSES_TXT = "/Users/judyhuang/Downloads/yolo11-eating/datasets/classes.txt" 
 
-# Load class names (index 0-based for YOLO)
 with open(CLASSES_TXT, "r") as f:
     class_names = [line.strip() for line in f.readlines()]
 category_name_to_id = {name: idx for idx, name in enumerate(class_names)}
 
-# Create output folders
 for split in ['train', 'val']:
     os.makedirs(os.path.join(OUTPUT_IMAGES_DIR, split), exist_ok=True)
     os.makedirs(os.path.join(OUTPUT_LABELS_DIR, split), exist_ok=True)
 
-# Helper: Convert bbox to YOLO format
 def convert_to_yolo(size, box):
     dw = 1.0 / size[0]
     dh = 1.0 / size[1]
@@ -27,7 +24,6 @@ def convert_to_yolo(size, box):
     h = (box[3] - box[1]) * dh
     return x_center, y_center, w, h
 
-# Process each category folder
 all_images = []
 for folder in os.listdir(RAW_DATASET_DIR):
     folder_path = os.path.join(RAW_DATASET_DIR, folder)
@@ -81,4 +77,4 @@ def save_data(data, split):
 save_data(train_data, "train")
 save_data(val_data, "val")
 
-print("✅ Conversion completed. Data saved to yolo_dataset/")
+print("!!! Conversion completed. Data saved to yolo_dataset/")
