@@ -84,3 +84,10 @@ yolo task=detect mode=train model=yolo11n.pt data=/Users/judyhuang/Downloads/yol
 ```
 ## Model Training - Eating Detection
 <img width="1105" alt="Screenshot 2025-05-23 at 7 17 20 PM" src="https://github.com/user-attachments/assets/15d67a1c-8838-4455-b6f6-fdfca31b5e23" />
+<img width="558" alt="Screenshot 2025-05-23 at 7 23 33 PM" src="https://github.com/user-attachments/assets/bcaea181-f407-4286-9042-b82c22e3b1b7" />
+<img width="972" alt="Screenshot 2025-05-23 at 7 23 42 PM" src="https://github.com/user-attachments/assets/ebeaaa64-aed0-4c57-9014-bb03bbc7164d" />
+<img width="966" alt="Screenshot 2025-05-23 at 7 23 52 PM" src="https://github.com/user-attachments/assets/e42670b7-7c24-4704-ae5c-b4dd023d01b4" />
+
+
+
+
