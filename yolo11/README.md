@@ -60,3 +60,4 @@ yolo11-food-detection/
 │   └── detect/        ← results of training and validation
 └── yolov11n.pt        ← model file (pretrained, downloaded)
 ```
+However, the projet is to 'detect whether food is present in the scene' — not classify the specific food.
