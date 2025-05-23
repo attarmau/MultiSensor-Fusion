@@ -1,4 +1,5 @@
 This project uses YOLOv11 for food item detection based on labeled images in YOLO format.
+
 Dataset (Open Source): UEC FOOD 256 - http://foodcam.mobi/dataset256.html 
 
 <img width="386" alt="Screenshot 2025-05-23 at 10 14 59 AM" src="https://github.com/user-attachments/assets/0906ef8a-ed34-497d-a126-2d93770c944d" />
