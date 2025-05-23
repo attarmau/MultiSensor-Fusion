@@ -1,6 +1,39 @@
+This project uses YOLOv11 for food item detection based on labeled images in YOLO format.
 Dataset (Open Source): UEC FOOD 256 - http://foodcam.mobi/dataset256.html 
 
 <img width="386" alt="Screenshot 2025-05-23 at 10 14 59 AM" src="https://github.com/user-attachments/assets/0906ef8a-ed34-497d-a126-2d93770c944d" />
+
+## Download Yolo (v8 -> v11)
+When using YOLOv8, typically install the ultralytics package like this:
+```
+pip install ultralytics
+```
+Then you train your model using:
+```
+yolo task=detect mode=train model=yolov8n.pt data=path/to/custom.yaml epochs=100 imgsz=640
+```
+Starting in 2024, Ultralytics released YOLOv11 — the next generation of YOLO.
+
+To get YOLOv11, you need the latest version of the ultralytics package. So you upgrade:
+```
+pip install -U ultralytics
+```
+Once upgraded, YOLOv11 models are available and you use them like this:
+```
+yolo task=detect mode=train model=yolov11n.pt data=path/to/custom.yaml epochs=100 imgsz=640
+```
+
+## Model Training 
+
+<img width="976" alt="Screenshot 2025-05-23 at 10 16 53 AM" src="https://github.com/user-attachments/assets/9580fa2f-6e0c-4616-a8f3-bcc194c3fb74" />
+
+
+```
+yolo task=detect mode=train model=yolo11n.pt data=/Users/judyhuang/Downloads/yolo11-eating/datasets/custom.yaml epochs=100 imgsz=640
+```
+<img width="970" alt="Screenshot 2025-05-23 at 10 13 38 AM" src="https://github.com/user-attachments/assets/bf878920-0e5e-48e9-a9cf-6c9332d87fc7" />
+
+Folder Structure
 
 ```
 yolo11-food-detection/
@@ -26,9 +59,3 @@ yolo11-food-detection/
 │   └── detect/        ← results of training and validation
 └── yolov11n.pt        ← model file (pretrained, downloaded)
 ```
-## Model Training 
-
-```
-yolo task=detect mode=train model=yolo11n.pt data=/Users/judyhuang/Downloads/yolo11-eating/datasets/custom.yaml epochs=100 imgsz=640
-```
-<img width="970" alt="Screenshot 2025-05-23 at 10 13 38 AM" src="https://github.com/user-attachments/assets/bf878920-0e5e-48e9-a9cf-6c9332d87fc7" />
