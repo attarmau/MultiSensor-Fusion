@@ -66,7 +66,7 @@ However, the projet is to 'detect whether food is present in the scene' — not 
 ```
 python 5_convert_all_class_to_0.py
 ```
-<img width="396" alt="Screenshot 2025-05-23 at 3 17 25 PM" src="https://github.com/user-attachments/assets/321d0f1d-3e29-41ba-87a0-dceda18a85be" />
+<img width="383" alt="Screenshot 2025-05-23 at 3 19 31 PM" src="https://github.com/user-attachments/assets/1fe73c51-7ff9-4ebf-8237-6e9730b4b482" />
 
 2. Updated the YOLO dataset YAML:
 ```
