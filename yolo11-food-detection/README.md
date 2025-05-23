@@ -14,9 +14,7 @@ yolo task=detect mode=train model=yolov8n.pt data=path/to/custom.yaml epochs=100
 ```
 Note: You could use yolov8n.pt, yolov8s.pt, etc.
 
-Starting in 2024, Ultralytics released YOLOv11 — the next generation of YOLO.
-
-To get YOLOv11, you need the latest version of the ultralytics package. So you upgrade:
+Starting in 2024, Ultralytics released YOLOv11 — the next generation of YOLO. To get YOLOv11, you need the latest version of the ultralytics package. So you upgrade:
 ```
 pip install -U ultralytics
 ```
