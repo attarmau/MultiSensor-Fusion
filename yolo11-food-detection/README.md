@@ -15,9 +15,8 @@ yolo11-eating/
 │   │   ├── val/
 │   │   │   ├── img2.txt
 │   │   │   └── ...
-│   └── custom.yaml   ← your dataset config file
+│   └── custom.yaml    ← dataset config file
 ├── runs/              ← will be auto-created after training
 │   └── detect/        ← results of training and validation
-├── yolov11n.pt        ← your model file (pretrained, downloaded)
-└── train.py (optional)  ← if you want to run training in script
+└── yolov11n.pt        ← model file (pretrained, downloaded)
 ```
