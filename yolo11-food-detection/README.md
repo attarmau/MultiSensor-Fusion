@@ -33,7 +33,7 @@ yolo task=detect mode=train model=yolo11n.pt data=/Users/judyhuang/Downloads/yol
 ```
 <img width="970" alt="Screenshot 2025-05-23 at 10 13 38 AM" src="https://github.com/user-attachments/assets/bf878920-0e5e-48e9-a9cf-6c9332d87fc7" />
 
-Folder Structure
+## Folder Structure
 
 ```
 yolo11-food-detection/
