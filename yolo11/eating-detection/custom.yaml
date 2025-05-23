@@ -1,4 +1,4 @@
-path: /Users/judyhuang/Downloads/yolo11-eating/datasets/yolo_dataset
+path: /Users/judyhuang/Downloads/yolo11-eating/datasets/yolo-dataset
 train: images/train
 val: images/val
 
