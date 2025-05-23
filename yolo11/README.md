@@ -60,4 +60,21 @@ yolo11-food-detection/
 │   └── detect/        ← results of training and validation
 └── yolov11n.pt        ← model file (pretrained, downloaded)
 ```
-However, the projet is to 'detect whether food is present in the scene' — not classify the specific food.
+However, the projet is to 'detect whether food is present in the scene' — not classify the specific food. To achieve this
+
+1. relabel all annotations to a single class (food):
+```
+python 5_convert_all_class_to_0.py
+```
+<img width="396" alt="Screenshot 2025-05-23 at 3 17 25 PM" src="https://github.com/user-attachments/assets/321d0f1d-3e29-41ba-87a0-dceda18a85be" />
+
+2. Updated the YOLO dataset YAML:
+```
+path: /Your/Dataset/Path
+train: images/train
+val: images/val
+
+names:
+  0: food
+```
+This setup simplifies the training task to binary food detection — perfect for scenarios like detecting whether someone is eating
