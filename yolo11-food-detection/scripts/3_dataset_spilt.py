@@ -46,4 +46,4 @@ def copy_pair(image_list, target_img_dir, target_lbl_dir):
 copy_pair(train_files, train_img_dir, train_lbl_dir)
 copy_pair(val_files, val_img_dir, val_lbl_dir)
 
-print(f"✅ Split complete: {len(train_files)} train / {len(val_files)} val")
+print(f" !!!!Split complete: {len(train_files)} train / {len(val_files)} val")
