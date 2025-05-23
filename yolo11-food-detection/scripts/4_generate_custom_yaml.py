@@ -14,6 +14,6 @@ def generate_custom_yaml(classes_path, yaml_output_path, train_path='datasets/im
     with open(yaml_output_path, 'w', encoding='utf-8') as outfile:
         yaml.dump(yaml_dict, outfile, allow_unicode=True)
 
-    print(f"✅ Created {yaml_output_path} with {len(class_names)} classes.")
+    print(f" !!!!!Created {yaml_output_path} with {len(class_names)} classes.")
 
 generate_custom_yaml('../datasets/classes.txt', '../datasets/custom.yaml')
