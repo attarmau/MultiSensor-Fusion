@@ -92,23 +92,23 @@ yolo task=detect mode=train model=yolo11n.pt data=/Users/judyhuang/Downloads/yol
 
 1. **Searched for Open Datasets**
 
-   * You browsed and selected relevant datasets on Roboflow for the **"eating" action**, focusing on object detection (e.g., person, food, fork, spoon, etc.).
+   * browsed and selected relevant datasets on Roboflow for the **"eating" action**, focusing on object detection (e.g., person, food, fork, spoon, etc.)
 
 2. **Combined or Chose a Dataset**
 
-   * You picked a dataset (or created a project) that includes the labels needed for detecting eating-related actions.
+   * picked a dataset (or created a project) that includes the labels needed for detecting eating-related actions
 
 3. **Used Roboflow's UI to Manage Data**
 
-   * You leveraged Roboflow’s **web UI** to:
+   * leveraged Roboflow’s **web UI** to:
 
-     * Visualize images and bounding boxes
+     * Visualise images and bounding boxes
      * Clean, review, or modify annotations
      * (Optionally) augment data using built-in tools
 
 4. **Exported Dataset for YOLOv8/YOLO11 Training**
 
-   * You used **“Download Dataset”**
+   * used **“Download Dataset”**
    * Selected export format: `YOLOv5 PyTorch` (✔️ compatible with YOLOv8/YOLO11)
    * Set image size (e.g., 640), and downloaded the `.zip` file
 
