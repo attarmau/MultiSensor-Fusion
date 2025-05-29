@@ -131,6 +131,5 @@ yolo task=detect mode=train model=yolo11n.pt data=/Users/judyhuang/Downloads/yol
      ```bash
      yolo task=detect mode=train model=yolo11n.pt data=path/to/data.yaml epochs=100 imgsz=640
      ```
-   * You encountered a file path error, which we are now resolving
 
 ![image](https://github.com/user-attachments/assets/cc924203-d7b0-4689-ba8a-73d7a7703823)
