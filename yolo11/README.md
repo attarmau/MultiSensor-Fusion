@@ -88,6 +88,49 @@ yolo task=detect mode=train model=yolo11n.pt data=/Users/judyhuang/Downloads/yol
 <img width="972" alt="Screenshot 2025-05-23 at 7 23 42 PM" src="https://github.com/user-attachments/assets/ebeaaa64-aed0-4c57-9014-bb03bbc7164d" />
 <img width="966" alt="Screenshot 2025-05-23 at 7 23 52 PM" src="https://github.com/user-attachments/assets/e42670b7-7c24-4704-ae5c-b4dd023d01b4" />
 
+## Roboflow 
 
+1. **Searched for Open Datasets**
 
+   * You browsed and selected relevant datasets on Roboflow for the **"eating" action**, focusing on object detection (e.g., person, food, fork, spoon, etc.).
 
+2. **Combined or Chose a Dataset**
+
+   * You picked a dataset (or created a project) that includes the labels needed for detecting eating-related actions.
+
+3. **Used Roboflow's UI to Manage Data**
+
+   * You leveraged Roboflow’s **web UI** to:
+
+     * Visualize images and bounding boxes
+     * Clean, review, or modify annotations
+     * (Optionally) augment data using built-in tools
+
+4. **Exported Dataset for YOLOv8/YOLO11 Training**
+
+   * You used **“Download Dataset”**
+   * Selected export format: `YOLOv5 PyTorch` (✔️ compatible with YOLOv8/YOLO11)
+   * Set image size (e.g., 640), and downloaded the `.zip` file
+
+5. **Prepared Training Files**
+
+   * Unzipped the dataset, which included:
+
+     ```
+     /train/images/
+     /train/labels/
+     /valid/images/
+     /valid/labels/
+     data.yaml
+     ```
+
+6. **Began Training with YOLOv11**
+
+   * Attempted training with:
+
+     ```bash
+     yolo task=detect mode=train model=yolo11n.pt data=path/to/data.yaml epochs=100 imgsz=640
+     ```
+   * You encountered a file path error, which we are now resolving
+
+![image](https://github.com/user-attachments/assets/cc924203-d7b0-4689-ba8a-73d7a7703823)
