@@ -54,10 +54,10 @@ These parameters describe how your camera "sees" the world and are essential for
 # Run 
 ## Step 1: Get the intrinsic parameters
 ```
-python /Your/file/path/MultiSensor-Fusion-main/multi_cam_calib/calibrate_single.py \
-  --images /Your/file/path/MultiSensor-Fusion-main/data/cam1 \
-  --out /Your/file/path/MultiSensor-Fusion-main/intrinsics_cam1.json \
-  --board 9x6
+python /Users/judyhuang/Downloads/MultiSensor-Fusion-main/multi_cam_calib/calibrate_single.py \
+  --images //Users/judyhuang/Downloads/MultiSensor-Fusion-main/data/intrinsic/cam1 \
+  --out /Users/judyhuang/Downloads/MultiSensor-Fusion-main/data/intrinsics_cam1.json \
+  --board 6x9
 ```
 If it shows the message below then means the intrinsic parameters were saved successfully
 ```
