@@ -78,3 +78,5 @@ Note: My scenario is 'Extrinsic Calibration for Fixed Multi-Camera Setup with No
 In this setup, multiple cameras are fixed in different corners, and their lenses do not move. The goal is to estimate the relative positions and orientations (extrinsics) between cameras using images of a shared 3D calibration object (e.g., a chessboard). The script uses the Perspective-n-Point (PnP) method, based on known intrinsic parameters and the object’s geometry.
 
 ⚠️ If your cameras can move or are repositioned together (e.g., in a stereo rig), you will need to modify the Step 2 script to fit your setup accordingly.
+
+Reference: https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html
