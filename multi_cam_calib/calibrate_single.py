@@ -47,25 +47,32 @@ def calibrate_camera(image_folder, board_size, square_size):
 
     return camera_matrix, dist_coeffs
 
-def save_intrinsics(filename, camera_martix, dist_coeffs, rvecs, tvecs):
+def save_intrinsics(filename, camera_matrix, dist_coeffs, rvecs, tvecs):
     data = {
-        'camera_matrix': mtx.tolist(),
-        'dist_coeffs': dist.tolist()
+        'camera_matrix': camera_matrix.tolist(),
+        'dist_coeffs': dist_coeffs.tolist(),
+        'rotation_vectors': [rvec.tolist() for rvec in rvecs],
+        'translation_vectors': [tvec.tolist() for tvec in tvecs]
     }
     with open(filename, 'w') as f:
         json.dump(data, f, indent=2)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--images', required=True)
-    parser.add_argument('--out', required=True)
-    parser.add_argument('--square', type=float, default=0.0244)
-    parser.add_argument('--board', default='9x6')
+    parser.add_argument('--images', required=True, help='Path to folder containing chessboard images')
+    parser.add_argument('--out', required=True, help='Output JSON file for intrinsics')
+    parser.add_argument('--square', type=float, default=0.0244, help='Chessboard square size in meters')
+    parser.add_argument('--board', default='6x9', help='Chessboard size as colsxrows (e.g. 6x9)')
 
     args = parser.parse_args()
     board_size = tuple(map(int, args.board.split('x')))
 
-    mtx, dist = calibrate_camera(args.images, board_size, args.square)
-    save_intrinsics(args.out, mtx, dist)
+    print(f"[INFO] Using board size: {board_size}")
+    print(f"[INFO] Using square size: {args.square} meters")
 
-    print(f"[INFO] Calibration saved to {args.out}")
+    camera_matrix, dist_coeffs, rvecs, tvecs = calibrate_camera(args.images, board_size, args.square)
+    save_intrinsics(args.out, camera_matrix, dist_coeffs, rvecs, tvecs)
+
+    print(f"[INFO] Calibration complete. Results saved to {args.out}")
+    print(f"[INFO] Camera matrix:\n{camera_matrix}")
+    print(f"[INFO] Distortion coefficients:\n{dist_coeffs}")
