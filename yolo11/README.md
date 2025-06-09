@@ -131,5 +131,9 @@ yolo task=detect mode=train model=yolo11n.pt data=/Users/judyhuang/Downloads/yol
      ```bash
      yolo task=detect mode=train model=yolo11n.pt data=path/to/data.yaml epochs=100 imgsz=640
      ```
+   * Test  live webcam detection:  
+ ```
+     yolo task=detect mode=predict model=/Users/judyhuang/Downloads/yolo11-video-eating/runs/detect/train/weights/best.pt source=0
+ ```
 
 ![image](https://github.com/user-attachments/assets/cc924203-d7b0-4689-ba8a-73d7a7703823)
