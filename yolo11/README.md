@@ -134,7 +134,7 @@ yolo task=detect mode=train model=yolo11n.pt data=/Users/judyhuang/Downloads/yol
    * Test  live webcam detection:  
      ```
      yolo task=detect mode=predict model=/Users/judyhuang/Downloads/yolo11-video-eating/runs/detect/train/weights/best.pt source=0
-     yolo task=detect mode=predict model=/path/to/best.pt source=0 show=True
+     yolo task=detect mode=predict model=/Users/judyhuang/Downloads/yolo11-video-eating/runs/detect/train/weights/best.pt source=0 show=True
 
       ```
 
